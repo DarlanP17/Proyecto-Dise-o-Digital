@@ -1,0 +1,28 @@
+{
+  "name": "proyecto-dise-o-digital",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarlanP17/Proyecto-Dise-o-Digital.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DarlanP17/Proyecto-Dise-o-Digital/issues"
+  },
+  "homepage": "https://github.com/DarlanP17/Proyecto-Dise-o-Digital#readme",
+  "dependencies": {
+    "argon2": "^0.44.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.15.3",
+    "zod": "^4.1.12"
+  }
+}
