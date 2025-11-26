@@ -1,7 +1,7 @@
 import { Servicio } from '../models/servicio.js';
 
 export const serviciosController = {
-  // GET /api/servicios - Listar todos los servicios
+  // Listar todos los servicios
   getAll: async (req, res, next) => {
     try {
       const servicios = await Servicio.getAll();
@@ -15,7 +15,7 @@ export const serviciosController = {
     }
   },
 
-  // POST /api/servicios - Crear nuevo servicio (solo admin)
+  // Crear nuevo servicio (solo admin)
   create: async (req, res, next) => {
     try {
       const { nombre, descripcion, precio, duracion_minutos } = req.body;
@@ -52,7 +52,7 @@ export const serviciosController = {
     }
   },
 
-  // PUT /api/servicios/:id - Actualizar servicio (solo admin)
+  // Actualizar servicio (solo admin)
   update: async (req, res, next) => {
     try {
       const { id } = req.params;
@@ -82,7 +82,7 @@ export const serviciosController = {
     }
   },
 
-  // DELETE /api/servicios/:id - Eliminar servicio (solo admin)
+  // Eliminar servicio (solo admin)
   delete: async (req, res, next) => {
     try {
       const { id } = req.params;

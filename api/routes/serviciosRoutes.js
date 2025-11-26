@@ -6,7 +6,7 @@ const router = express.Router();
 // GET /api/servicios - Público
 router.get('/', serviciosController.getAll);
 
-// POST /api/servicios - Solo admin (los middlewares se agregarán después)
+// POST /api/servicios - Solo admin
 router.post('/', serviciosController.create);
 
 // PUT /api/servicios/:id - Solo admin
@@ -16,3 +16,5 @@ router.put('/:id', serviciosController.update);
 router.delete('/:id', serviciosController.delete);
 
 export default router;
+
+
