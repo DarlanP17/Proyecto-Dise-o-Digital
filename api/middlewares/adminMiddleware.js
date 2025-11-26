@@ -1,23 +1,22 @@
-//TEMPORAL:
 export const isAdmin = (req, res, next) => {
   
   try{
   
-      const { authorization } = req.headers
+    const { authorization } = req.headers
       
-      const [_, token] = authorization.split(' ')
+    const [_, token] = authorization.split(' ')
   
-      const { id, acces } = jwt.verify(token, process.env.JWT_SECRET_KEY)
+    const { id, rol } = jwt.verify(token, process.env.JWT_SECRET_KEY)
   
-      req.headers.id = id
+    req.headers.id = id
   
-      if(acces != 'Admin'){
+    if(rol != 'admin'){
 
-        throw new Error('Acceso no autorizado');
+      throw new Error('Acceso no autorizado');
 
-      }
+    }
 
-      next()
+    next()
   
   }catch (error) {
       

@@ -4,6 +4,7 @@ import cors from 'cors';
 
 // Importar rutas
 import serviciosRoutes from './api/routes/serviciosRoutes.js';
+import usuariosRouter from './api/routes/usariosRoutes.js';
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 
 // Rutas
 app.use('/api/servicios', serviciosRoutes);
+app.use('/usuario',usuariosRouter);
 
 // Ruta de prueba
 app.get('/', (req, res) => {
