@@ -20,7 +20,7 @@ export const isAuth = (req, res, next) => {
 
       message: 'Debe iniciar sesion',
 
-      data: error
+      data: error.message
 
     })
   }
