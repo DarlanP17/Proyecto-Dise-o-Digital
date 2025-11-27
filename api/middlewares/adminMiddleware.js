@@ -1,3 +1,5 @@
+import jwt from 'jsonwebtoken'
+
 export const isAdmin = (req, res, next) => {
   
   try{
@@ -8,7 +10,7 @@ export const isAdmin = (req, res, next) => {
   
     const { id, rol } = jwt.verify(token, process.env.JWT_SECRET_KEY)
   
-    req.headers.id = id
+    req.user = { id, rol }
   
     if(rol != 'admin'){
 
@@ -42,4 +44,3 @@ export const isAdmin = (req, res, next) => {
     }      
   }
 };
-

@@ -8,9 +8,9 @@ export const isAuth = (req, res, next) => {
     
     const [_, token] = authorization.split(' ')
 
-    const { id } = jwt.verify(token, process.env.JWT_SECRET_KEY)
+    const { id, rol } = jwt.verify(token, process.env.JWT_SECRET_KEY)
 
-    req.headers.id = id
+    req.user = { id, rol }
 
     next()
 
