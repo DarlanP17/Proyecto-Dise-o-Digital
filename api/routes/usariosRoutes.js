@@ -6,6 +6,6 @@ const usuariosRouter = express.Router();
 
 usuariosRouter.post('/login', login);
 
-usuariosRouter.post('/signup',newUser)
+usuariosRouter.post('/register',newUser)
 
 export default usuariosRouter;
