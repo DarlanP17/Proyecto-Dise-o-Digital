@@ -8,7 +8,7 @@ export const isAdmin = (req, res, next) => {
       
     const [_, token] = authorization.split(' ')
   
-    const { id, rol } = jwt.verify(token, process.env.JWT_SECRET_KEY)
+    const { id, rol } = jwt.verify(token, process.env.JWT_SECRET)
   
     req.user = { id, rol }
   
