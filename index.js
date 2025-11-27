@@ -5,6 +5,7 @@ import cors from 'cors';
 // Importar rutas
 import serviciosRoutes from './api/routes/serviciosRoutes.js';
 import usuariosRouter from './api/routes/usariosRoutes.js';
+import { errorHandler } from './api/utils/handleErrors.js';
 
 dotenv.config();
 
@@ -43,6 +44,8 @@ app.use((req, res) => {
     message: 'Ruta no encontrada'
   });
 });
+
+app.use(errorHandler)
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ${PORT}`);

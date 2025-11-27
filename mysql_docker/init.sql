@@ -41,5 +41,5 @@ INSERT INTO usuarios (id,nombre, email, password, rol) VALUES
 (UUID(),'Administrador', 'admin@example.com', "$argon2id$v=19$m=16,t=2,p=1$SGRPOFhLNnI3ek1BZTNaVQ$4eubdbonYgvlwR3WF9Xffw", 'admin');
 
 INSERT INTO servicios (id,nombre, descripcion, precio, duracion_minutos) VALUES 
-(UUID(),'Corte de Pelo Caballero', 'Corte moderno para hombre', 15.00, 30),
-(UUID(),'Tinte Completo', 'Aplicación de color en todo el cabello', 45.50, 90);
+(UUID(),'Atencion Dental', 'Limpieza dental profesional', 15.00, 30),
+(UUID(),'Examen de rayos x', 'Revision de problemas oseos', 45.50, 90);
