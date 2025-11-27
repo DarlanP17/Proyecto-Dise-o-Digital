@@ -5,7 +5,9 @@ class Citas {
   // ---- Handlers Express (controller) ----
   static async crear(req, res, next) {
     try {
-      const validated = await citaSchema.parseAsync(req.body);
+      // Tomar usuario_id del token JWT, no del body
+      const data = { ...req.body, usuario_id: req.user.id };
+      const validated = await citaSchema.parseAsync(data);
       const nueva = await CitasService.createCita(validated);
       res.status(201).json({ success: true, data: nueva });
     } catch (error) {

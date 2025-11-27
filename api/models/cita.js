@@ -3,6 +3,14 @@ import { pool } from '../config/database.js';
 class CitasService {
   static async createCita({ usuario_id, servicio_id, fecha, hora_inicio, estado }) {
     try {
+      // Verificar que el servicio existe para evitar fallo de FK y dar un error claro
+      const [servRows] = await pool.query('SELECT id FROM servicios WHERE id = ?', [servicio_id]);
+      if (!servRows || servRows.length === 0) {
+        const err = new Error('Servicio no encontrado');
+        err.status = 400;
+        throw err;
+      }
+
       await pool.query(
         `INSERT INTO citas (id, usuario_id, servicio_id, fecha, hora_inicio, estado) VALUES (UUID(), ?, ?, ?, ?, ?)`,
         [usuario_id, servicio_id, fecha, hora_inicio, estado || 'programada']
